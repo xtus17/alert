@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="EasySOS App - Plataforma de Alerta Ciudadana"
+    />
+    <meta
+      name="keywords"
+      content="EasySOS App, alertas, seguridad ciudadana, emergencias"
+    />
+    <meta name="author" content="Xaler" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="URL DE TU SITIO" />
+    <meta
+      property="og:title"
+      content="EasySOS App - Plataforma de Alerta Ciudadana"
+    />
+    <meta
+      property="og:description"
+      content="Envía alertas ciudadanas de manera rápida y sencilla con EasySOS App."
+    />
+    <meta property="og:image" content="URL DE UNA IMAGEN REPRESENTATIVA" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="URL DE TU SITIO" />
+    <meta
+      property="twitter:title"
+      content="EasySOS App - Plataforma de Alerta Ciudadana"
+    />
+    <meta
+      property="twitter:description"
+      content="Envía alertas ciudadanas de manera rápida y sencilla con EasySOS App."
+    />
+    <meta property="twitter:image" content="URL DE UNA IMAGEN REPRESENTATIVA" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  
+    <link
+      rel="icon"
+      href="/alerteasysoscity/assets/Logo EasySOS web.png"
+      type="image/x-icon"
+    />
+
+    <!--<link rel="icon" href="/Logo EasySOS web.png" type="image/x-icon" />-->
+    <title>EasySOS App</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="mb-4">EasySOS App - Plataforma de Alerta Ciudadana</h1>
+      <form action="/alerteasysoscity/send-notifications" method="post">
+        <div class="form-group">
+          <label for="customBody">Descripción de Alerta</label>
+          <input
+            type="text"
+            class="form-control"
+            id="customBody"
+            name="customBody"
+            minlength="6"
+            required
+            placeholder="Describe la alerta y el lugar aprox. (6 Carácteres mínimo)"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+  </body>
+</html>
