@@ -5,26 +5,43 @@ const sendNotifications = require("./send-notifications.js");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use("/alerteasysoscity", express.static(path.join(__dirname, "public")));
+/*Subdirectorio
+app.use("/alerteasysoscitys", express.static(path.join(__dirname, "public")));
+*/
+app.use("/", express.static(path.join(__dirname, "public")));
+
+/*Subdirectorio
 app.use(
-  "/alerteasysoscity/assets",
+  "/alerteasysoscitys/assets",
   express.static(path.join(__dirname, "assets"))
 );
+*/
+app.use("/assets", express.static(path.join(__dirname, "assets")));
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/alerteasysoscity", (req, res) => {
-  res.render("index"); // Ajusta según tus necesidades
+/*Subdirectorio
+app.get("/alerteasysoscitys", (req, res) => {
+  res.render("index"); 
+});
+*/
+
+app.get("/", (req, res) => {
+  res.render("index");
 });
 
 app.get("/modal", (req, res) => {
   res.render("modal");
 });
 
-app.post("/alerteasysoscity/send-notifications", async (req, res) => {
+/*Sub directorio
+app.post("/alerteasysoscitys/send-notifications", async (req, res) => {
+*/
+
+app.post("/send-notifications", async (req, res) => {
   const customBody = req.body.customBody || "EasySOS App";
 
   try {
@@ -35,8 +52,6 @@ app.post("/alerteasysoscity/send-notifications", async (req, res) => {
       successMessage: "Las notificaciones fueron enviadas con éxito",
     });
   } catch (error) {
-    // res.send("Notificaciones no fueron enviadas con éxito", error);
-
     res.render("modal", {
       errorMessage: "Las notificaciones no fueron enviadas con éxito",
     });
@@ -45,5 +60,5 @@ app.post("/alerteasysoscity/send-notifications", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server start in http://localhost:${PORT}/alerteasysoscity`);
+  console.log(`Server start in http://localhost:${PORT}`);
 });

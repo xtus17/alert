@@ -46,20 +46,49 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
-  
-    <link
+
+    <!--
+          <link
       rel="icon"
-      href="/alerteasysoscity/assets/Logo EasySOS web.png"
+      href="/alerteasysoscitys/assets/Logo EasySOS web.png"
       type="image/x-icon"
     />
+    -->
+
+    <link rel="icon" href="/assets/Logo EasySOS web.png" type="image/x-icon" />
+
+    <style>
+      @media (max-width: 576px) {
+        h1 {
+          font-size: 1.3rem;
+        }
+      }
+    </style>
 
     <!--<link rel="icon" href="/Logo EasySOS web.png" type="image/x-icon" />-->
     <title>EasySOS App</title>
   </head>
   <body>
     <div class="container mt-5">
-      <h1 class="mb-4">EasySOS App - Plataforma de Alerta Ciudadana</h1>
-      <form action="/alerteasysoscity/send-notifications" method="post">
+      <div
+        class="container mt-5 d-flex align-items-center ml=3 justify-content-center"
+      >
+        <a href="https://www.easysos.app">
+          <img
+            src="/assets/Logo EasySOS web.png"
+            alt="EasySOS Logo"
+            class="img-fluid mb-4 mr-4"
+            style="max-width: 60px; height: auto"
+          />
+        </a>
+
+        <h1 class="mb-4 text-sm-center text-sm-left">
+          EasySOS App - Plataforma de Alerta Ciudadana
+        </h1>
+      </div>
+
+      <!--  <form action="/alerteasysoscitys/send-notifications" method="post">-->
+      <form action="/send-notifications" method="post">
         <div class="form-group">
           <label for="customBody">Descripción de Alerta</label>
           <input
